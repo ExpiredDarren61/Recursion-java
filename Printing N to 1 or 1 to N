@@ -7,10 +7,10 @@ public class Main {
            return;
        }
        System.out.println(n);
-       printNUM(n+1);
+       printNum(n+1);
    }
     public static void main(String[] args) {
-       printNUM(1);
+       printNum(1);
     }
 }
 
@@ -23,10 +23,10 @@ public class Main {
            return;
        }
        System.out.println(n);
-       printNUM(n-1);
+       printNum(n-1);
    }
     public static void main(String[] args) {
-       printNUM(5);
+       printNum(5);
     }
 }
 
