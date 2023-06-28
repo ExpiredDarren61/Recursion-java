@@ -1,0 +1,32 @@
+1 ======> N
+
+public class Main {
+
+   public static void printNUM(int n) {
+       if (n > 5) {
+           return;
+       }
+       System.out.println(n);
+       printNUM(n+1);
+   }
+    public static void main(String[] args) {
+       printNUM(1);
+    }
+}
+
+N ======> 1
+
+public class Main {
+
+   public static void printNUM(int n) {
+       if (n == 0) {
+           return;
+       }
+       System.out.println(n);
+       printNUM(n-1);
+   }
+    public static void main(String[] args) {
+       printNUM(5);
+    }
+}
+
