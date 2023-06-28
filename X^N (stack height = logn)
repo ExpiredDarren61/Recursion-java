@@ -1,0 +1,42 @@
+# for even integer n
+# x^n = x^n/2 * x^n/2
+
+# for odd integer n
+# x^n = x^n/2 * x^n/2 * x
+
+# at each level integer n is being divided by 2^y 
+# where y is any integer+
+
+# n will keep getting smaller at each level until it reaches 1.
+# in other words when n/2^y = 1.
+# stack height is equal to y.
+# therefore, stack height is equal to:
+# n = 2^y
+# log(base 2)(n) = y
+
+public class Main {
+
+   public static int calculatePower(int x, int n) {
+        // base case 1
+        if (n == 0) {
+            return 1;
+        }
+
+        //base case 2
+        if (x == 0) {
+            return 0;
+        }
+
+        // if x is even or odd
+        if (n%2 == 0) {
+            return calculatePower(x, n/2) * calculatePower(x,n/2);
+
+        }
+        else {
+            return calculatePower(x,n/2) * calculatePower(x, n/2) * x;
+        }
+   }
+    public static void main(String[] args) {
+       System.out.println(calculatePower(5,3));
+    }
+}
