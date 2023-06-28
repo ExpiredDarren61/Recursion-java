@@ -2,7 +2,7 @@
 
 public class Main {
 
-   public static void printNUM(int n) {
+   public static void printNum(int n) {
        if (n > 5) {
            return;
        }
@@ -18,7 +18,7 @@ N ======> 1
 
 public class Main {
 
-   public static void printNUM(int n) {
+   public static void printNum(int n) {
        if (n == 0) {
            return;
        }
