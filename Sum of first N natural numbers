@@ -1,0 +1,17 @@
+public class Main {
+
+    public static void printSum(int n, int sum) {
+        if (n == 0) {
+            System.out.println(sum);
+            return;
+        }
+        sum += n;
+        printSum(n-1, sum);
+
+    }
+    public static void main(String[] args) {
+        int sum = 0;
+        int n = 10;
+        printSum(n, sum);
+    }
+}
