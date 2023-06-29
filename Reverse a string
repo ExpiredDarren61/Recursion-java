@@ -1,0 +1,18 @@
+public class Main {
+
+    public static void reverseString(int index, String string) {
+        if (index == -1) {
+            System.out.println();
+            return;
+        }
+        System.out.print(string.charAt(index));
+        reverseString(index-1, string);
+    }
+
+    public static void main(String[] args) {
+        String string = "abcd";
+        int index = string.length() - 1;
+        reverseString(index, string);
+
+    }
+}
