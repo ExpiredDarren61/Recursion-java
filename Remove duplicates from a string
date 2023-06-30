@@ -1,0 +1,28 @@
+public class Main {
+
+    public static boolean[] alphabetsFound = new boolean[26];
+
+    public static void removeDuplicates(int index, String str, StringBuilder newString) {
+
+        if (index == str.length()) {
+            System.out.println(newString);
+            return;
+        }
+
+        char currentChar = str.charAt(index);
+        if (alphabetsFound[currentChar - 'a']) {
+            removeDuplicates(index + 1, str, newString);
+        }
+        else {
+            newString.append(currentChar);
+            alphabetsFound[currentChar - 'a'] = true;
+            removeDuplicates(index + 1, str, newString);
+        }
+    }
+
+    public static void main(String[] args) {
+        String str = "abbccda";
+        StringBuilder newString = new StringBuilder(str.length());
+        removeDuplicates(0, str, newString);
+    }
+}
