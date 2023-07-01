@@ -1,0 +1,24 @@
+public class Main {
+
+    public static boolean[] alphabetsFound = new boolean[26];
+
+    public static void subsequences(int index, String str, String newString) {
+
+        if (index == str.length()) {
+            System.out.println(newString);
+            return;
+        }
+        char currentCharacter = str.charAt(index);
+
+        // element wants to join new string
+        subsequences(index + 1, str, newString + currentCharacter);
+
+        // element doesn't wan to join the new string
+        subsequences(index + 1, str, newString + '_');
+    }
+
+    public static void main(String[] args) {
+        String str = "abc";
+        subsequences(0, str, "");
+    }
+}
