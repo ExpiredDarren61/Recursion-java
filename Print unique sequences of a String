@@ -1,0 +1,34 @@
+import java.util.HashSet;
+public class Main {
+
+    public static boolean[] alphabetsFound = new boolean[26];
+
+    public static void subsequences(int index, String str, String newString, HashSet<String> set){
+
+        if (index == str.length()) {
+            if (set.contains(newString)) {
+                return;
+            }
+            else {
+                System.out.println(newString);
+                set.add(newString);
+                return;
+            }
+
+
+        }
+        char currentCharacter = str.charAt(index);
+
+        // element wants to join new string
+        subsequences(index + 1, str, newString + currentCharacter, set);
+
+        // element doesn't wan to join the new string
+        subsequences(index + 1, str, newString, set);
+    }
+
+    public static void main(String[] args) {
+        String str = "aaa";
+        HashSet<String> set = new HashSet<>();
+        subsequences(0, str, "", set);
+    }
+}
