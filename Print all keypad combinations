@@ -1,0 +1,21 @@
+import java.util.HashSet;
+public class Main {
+    public static String[] keypad = {".", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tu", "vwx", "yz"};
+
+    public static void printCombination(int index, String str, String combination) {
+        if (index == str.length()) {
+            System.out.println(combination);
+            return;
+        }
+        char currentCharacter = str.charAt(index);
+        String mapping = keypad[currentCharacter - '0'];
+
+        for(int i = 0; i < mapping.length(); i++) {
+            printCombination(index + 1, str, combination + mapping.charAt(index));
+        }
+    }
+    public static void main(String[] args) {
+        String str = "23";
+        printCombination(0, str,  "");
+    }
+}
